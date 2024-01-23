@@ -157,7 +157,6 @@ namespace Calculator
         private void btnteng_Click(object sender, EventArgs e)
         {
             PerformOperation();
-            Txt.Text = btnNumber.ToString();
         }
     }
 }
