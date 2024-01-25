@@ -37,6 +37,7 @@
             this.Updatebtn = new System.Windows.Forms.Button();
             this.Removebtn = new System.Windows.Forms.Button();
             this.Createbtn = new System.Windows.Forms.Button();
+            this.Refreshbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             // MenuPanel
             // 
+            this.MenuPanel.Controls.Add(this.Refreshbtn);
             this.MenuPanel.Controls.Add(this.Closebtn);
             this.MenuPanel.Controls.Add(this.Updatebtn);
             this.MenuPanel.Controls.Add(this.Removebtn);
@@ -97,7 +99,7 @@
             this.Closebtn.FlatAppearance.BorderSize = 0;
             this.Closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Closebtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Closebtn.Location = new System.Drawing.Point(0, 329);
+            this.Closebtn.Location = new System.Drawing.Point(0, 376);
             this.Closebtn.Name = "Closebtn";
             this.Closebtn.Size = new System.Drawing.Size(178, 55);
             this.Closebtn.TabIndex = 3;
@@ -110,7 +112,7 @@
             this.Updatebtn.FlatAppearance.BorderSize = 0;
             this.Updatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Updatebtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Updatebtn.Location = new System.Drawing.Point(0, 243);
+            this.Updatebtn.Location = new System.Drawing.Point(0, 196);
             this.Updatebtn.Name = "Updatebtn";
             this.Updatebtn.Size = new System.Drawing.Size(178, 55);
             this.Updatebtn.TabIndex = 2;
@@ -123,7 +125,7 @@
             this.Removebtn.FlatAppearance.BorderSize = 0;
             this.Removebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Removebtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Removebtn.Location = new System.Drawing.Point(0, 158);
+            this.Removebtn.Location = new System.Drawing.Point(0, 111);
             this.Removebtn.Name = "Removebtn";
             this.Removebtn.Size = new System.Drawing.Size(178, 55);
             this.Removebtn.TabIndex = 1;
@@ -136,13 +138,26 @@
             this.Createbtn.FlatAppearance.BorderSize = 0;
             this.Createbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Createbtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Createbtn.Location = new System.Drawing.Point(0, 76);
+            this.Createbtn.Location = new System.Drawing.Point(0, 29);
             this.Createbtn.Name = "Createbtn";
             this.Createbtn.Size = new System.Drawing.Size(178, 55);
             this.Createbtn.TabIndex = 0;
             this.Createbtn.Text = "Add";
             this.Createbtn.UseVisualStyleBackColor = true;
             this.Createbtn.Click += new System.EventHandler(this.Createbtn_Click);
+            // 
+            // Refreshbtn
+            // 
+            this.Refreshbtn.FlatAppearance.BorderSize = 0;
+            this.Refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refreshbtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Refreshbtn.Location = new System.Drawing.Point(0, 286);
+            this.Refreshbtn.Name = "Refreshbtn";
+            this.Refreshbtn.Size = new System.Drawing.Size(178, 55);
+            this.Refreshbtn.TabIndex = 4;
+            this.Refreshbtn.Text = "Refresh";
+            this.Refreshbtn.UseVisualStyleBackColor = true;
+            this.Refreshbtn.Click += new System.EventHandler(this.Refreshbtn_Click);
             // 
             // Dashboard
             // 
@@ -155,6 +170,7 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pharmacy";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
@@ -174,6 +190,7 @@
         private System.Windows.Forms.Button Removebtn;
         private System.Windows.Forms.Panel UserControlPanel;
         private System.Windows.Forms.Panel TopPanel;
+        private System.Windows.Forms.Button Refreshbtn;
     }
 }
 

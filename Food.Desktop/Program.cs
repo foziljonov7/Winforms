@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Food.Desktop.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace Food.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+
+            ProductRepository repository = new ProductRepository();
+            Application.Run(new Dashboard(repository));
         }
     }
 }
