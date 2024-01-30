@@ -1,5 +1,4 @@
-﻿using Library.Desktop.Services;
-using Library.Desktop.UserControls;
+﻿using Library.Desktop.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +13,9 @@ namespace Library.Desktop
 {
     public partial class DashboardWindow : Form
     {
-        private readonly BookService service;
-
-        public DashboardWindow(BookService service)
+        public DashboardWindow()
         {
             InitializeComponent();
-            this.service = service;
         }
 
         private void Closebtn_Click(object sender, EventArgs e)
@@ -32,7 +28,24 @@ namespace Library.Desktop
         }
         private void Databtn_Click(object sender, EventArgs e)
         {
-            DataUserControl userControl = new DataUserControl(service);
+            DataUserControl userControl = new DataUserControl();
+            AddUserControl(userControl);
+        }
+
+        private void Refreshbtn_Click(object sender, EventArgs e)
+        {
+            DataUserControl userControl = new DataUserControl();
+            AddUserControl(userControl);
+        }
+
+        private void ControlPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DashboardWindow_Load(object sender, EventArgs e)
+        {
+            DataUserControl userControl = new DataUserControl();
             AddUserControl(userControl);
         }
     }

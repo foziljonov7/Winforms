@@ -1,34 +1,33 @@
-﻿using Library.Desktop.Models;
-using Library.Desktop.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Library.Desktop.UserControls
 {
     public partial class DataUserControl : UserControl
     {
-        private readonly BookService service;
+        SqlConnection connection = new SqlConnection();
+        SqlCommand command = new SqlCommand();
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        DataTable table = new DataTable();
 
-        public DataUserControl(BookService service)
+        public DataUserControl()
         {
             InitializeComponent();
-            this.service = service;
         }
-        private async void LoadData()
+        private void LoadData2()
         {
-            List<Book> books = await service.GetBooks();
-            BookDataGrid.DataSource = books;
+            string readQuery = "SELECT * FROM [Table]";
+            adapter = new SqlDataAdapter(readQuery, connection);
+            table = new DataTable();
+            adapter.Fill(table);
+            BookDataGrid.DataSource = table;
         }
         private void DataUserControl_Load(object sender, EventArgs e)
         {
-            LoadData();
+            connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\dev\Новая папка\Calculator\Library.Desktop\LibraryDB.mdf"";Integrated Security=True");
+            LoadData2();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Library.Desktop.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,8 +16,7 @@ namespace Library.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            BookService service = new BookService();
-            Application.Run(new DashboardWindow(service));
+            Application.Run(new DashboardWindow());
         }
     }
 }

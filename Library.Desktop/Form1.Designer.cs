@@ -30,19 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardWindow));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ControlPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.MenuPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Databtn = new System.Windows.Forms.Button();
-            this.Createbtn = new System.Windows.Forms.Button();
+            this.Refreshbtn = new System.Windows.Forms.Button();
+            this.Closebtn = new System.Windows.Forms.Button();
             this.Deletebtn = new System.Windows.Forms.Button();
             this.Updatebtn = new System.Windows.Forms.Button();
-            this.Closebtn = new System.Windows.Forms.Button();
-            this.ControlPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Createbtn = new System.Windows.Forms.Button();
+            this.Databtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,15 +58,6 @@
             this.panel1.Size = new System.Drawing.Size(900, 600);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.MenuPanel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 600);
-            this.panel2.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.ControlPanel);
@@ -75,11 +67,33 @@
             this.panel3.Size = new System.Drawing.Size(700, 600);
             this.panel3.TabIndex = 1;
             // 
+            // ControlPanel
+            // 
+            this.ControlPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ControlPanel.BorderColor = System.Drawing.Color.Transparent;
+            this.ControlPanel.BorderRadius = 15;
+            this.ControlPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+            this.ControlPanel.Location = new System.Drawing.Point(6, 12);
+            this.ControlPanel.Name = "ControlPanel";
+            this.ControlPanel.Size = new System.Drawing.Size(682, 576);
+            this.ControlPanel.TabIndex = 0;
+            this.ControlPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ControlPanel_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.MenuPanel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 600);
+            this.panel2.TabIndex = 0;
+            // 
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.Transparent;
             this.MenuPanel.BorderColor = System.Drawing.Color.Transparent;
             this.MenuPanel.BorderRadius = 15;
+            this.MenuPanel.Controls.Add(this.Refreshbtn);
             this.MenuPanel.Controls.Add(this.Closebtn);
             this.MenuPanel.Controls.Add(this.Deletebtn);
             this.MenuPanel.Controls.Add(this.Updatebtn);
@@ -92,42 +106,33 @@
             this.MenuPanel.Size = new System.Drawing.Size(182, 576);
             this.MenuPanel.TabIndex = 0;
             // 
-            // pictureBox1
+            // Refreshbtn
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Refreshbtn.FlatAppearance.BorderSize = 0;
+            this.Refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refreshbtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Refreshbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
+            this.Refreshbtn.Location = new System.Drawing.Point(0, 448);
+            this.Refreshbtn.Name = "Refreshbtn";
+            this.Refreshbtn.Size = new System.Drawing.Size(182, 47);
+            this.Refreshbtn.TabIndex = 6;
+            this.Refreshbtn.Text = "Refresh";
+            this.Refreshbtn.UseVisualStyleBackColor = true;
+            this.Refreshbtn.Click += new System.EventHandler(this.Refreshbtn_Click);
             // 
-            // Databtn
+            // Closebtn
             // 
-            this.Databtn.FlatAppearance.BorderSize = 0;
-            this.Databtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Databtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Databtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
-            this.Databtn.Location = new System.Drawing.Point(0, 115);
-            this.Databtn.Name = "Databtn";
-            this.Databtn.Size = new System.Drawing.Size(182, 47);
-            this.Databtn.TabIndex = 1;
-            this.Databtn.Text = "Data";
-            this.Databtn.UseVisualStyleBackColor = true;
-            this.Databtn.Click += new System.EventHandler(this.Databtn_Click);
-            // 
-            // Createbtn
-            // 
-            this.Createbtn.FlatAppearance.BorderSize = 0;
-            this.Createbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Createbtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Createbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
-            this.Createbtn.Location = new System.Drawing.Point(0, 198);
-            this.Createbtn.Name = "Createbtn";
-            this.Createbtn.Size = new System.Drawing.Size(182, 47);
-            this.Createbtn.TabIndex = 2;
-            this.Createbtn.Text = "Create";
-            this.Createbtn.UseVisualStyleBackColor = true;
+            this.Closebtn.FlatAppearance.BorderSize = 0;
+            this.Closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Closebtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Closebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
+            this.Closebtn.Location = new System.Drawing.Point(0, 526);
+            this.Closebtn.Name = "Closebtn";
+            this.Closebtn.Size = new System.Drawing.Size(182, 47);
+            this.Closebtn.TabIndex = 5;
+            this.Closebtn.Text = "Close";
+            this.Closebtn.UseVisualStyleBackColor = true;
+            this.Closebtn.Click += new System.EventHandler(this.Closebtn_Click);
             // 
             // Deletebtn
             // 
@@ -155,30 +160,42 @@
             this.Updatebtn.Text = "Update";
             this.Updatebtn.UseVisualStyleBackColor = true;
             // 
-            // Closebtn
+            // Createbtn
             // 
-            this.Closebtn.FlatAppearance.BorderSize = 0;
-            this.Closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Closebtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Closebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
-            this.Closebtn.Location = new System.Drawing.Point(0, 508);
-            this.Closebtn.Name = "Closebtn";
-            this.Closebtn.Size = new System.Drawing.Size(182, 47);
-            this.Closebtn.TabIndex = 5;
-            this.Closebtn.Text = "Close";
-            this.Closebtn.UseVisualStyleBackColor = true;
-            this.Closebtn.Click += new System.EventHandler(this.Closebtn_Click);
+            this.Createbtn.FlatAppearance.BorderSize = 0;
+            this.Createbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Createbtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Createbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
+            this.Createbtn.Location = new System.Drawing.Point(0, 198);
+            this.Createbtn.Name = "Createbtn";
+            this.Createbtn.Size = new System.Drawing.Size(182, 47);
+            this.Createbtn.TabIndex = 2;
+            this.Createbtn.Text = "Create";
+            this.Createbtn.UseVisualStyleBackColor = true;
             // 
-            // ControlPanel
+            // Databtn
             // 
-            this.ControlPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ControlPanel.BorderColor = System.Drawing.Color.Transparent;
-            this.ControlPanel.BorderRadius = 15;
-            this.ControlPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
-            this.ControlPanel.Location = new System.Drawing.Point(6, 12);
-            this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(682, 576);
-            this.ControlPanel.TabIndex = 0;
+            this.Databtn.FlatAppearance.BorderSize = 0;
+            this.Databtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Databtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Databtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
+            this.Databtn.Location = new System.Drawing.Point(0, 115);
+            this.Databtn.Name = "Databtn";
+            this.Databtn.Size = new System.Drawing.Size(182, 47);
+            this.Databtn.TabIndex = 1;
+            this.Databtn.Text = "Data";
+            this.Databtn.UseVisualStyleBackColor = true;
+            this.Databtn.Click += new System.EventHandler(this.Databtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(119, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // DashboardWindow
             // 
@@ -191,9 +208,10 @@
             this.Name = "DashboardWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.DashboardWindow_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -213,6 +231,7 @@
         private System.Windows.Forms.Button Databtn;
         private System.Windows.Forms.Button Closebtn;
         private Guna.UI2.WinForms.Guna2Panel ControlPanel;
+        private System.Windows.Forms.Button Refreshbtn;
     }
 }
 
