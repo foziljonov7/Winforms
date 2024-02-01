@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Updatelbl = new System.Windows.Forms.Label();
+            this.Idtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Authortxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.TimeOfWritingtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Pricetxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Nametxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Idtxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Updatelbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,15 +53,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(682, 576);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.Updatelbl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(682, 77);
-            this.panel2.TabIndex = 0;
             // 
             // panel3
             // 
@@ -77,17 +68,29 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(682, 499);
             this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // Updatelbl
+            // Idtxt
             // 
-            this.Updatelbl.AutoSize = true;
-            this.Updatelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Updatelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
-            this.Updatelbl.Location = new System.Drawing.Point(277, 16);
-            this.Updatelbl.Name = "Updatelbl";
-            this.Updatelbl.Size = new System.Drawing.Size(129, 45);
-            this.Updatelbl.TabIndex = 7;
-            this.Updatelbl.Text = "Update";
+            this.Idtxt.BorderRadius = 8;
+            this.Idtxt.BorderThickness = 0;
+            this.Idtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Idtxt.DefaultText = "";
+            this.Idtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Idtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Idtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Idtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Idtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Idtxt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.Idtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Idtxt.Location = new System.Drawing.Point(186, 20);
+            this.Idtxt.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Idtxt.Name = "Idtxt";
+            this.Idtxt.PasswordChar = '\0';
+            this.Idtxt.PlaceholderText = "Id...";
+            this.Idtxt.SelectedText = "";
+            this.Idtxt.Size = new System.Drawing.Size(310, 41);
+            this.Idtxt.TabIndex = 13;
             // 
             // guna2GradientButton2
             // 
@@ -215,27 +218,25 @@
             this.Nametxt.Size = new System.Drawing.Size(310, 41);
             this.Nametxt.TabIndex = 6;
             // 
-            // Idtxt
+            // panel2
             // 
-            this.Idtxt.BorderRadius = 8;
-            this.Idtxt.BorderThickness = 0;
-            this.Idtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Idtxt.DefaultText = "";
-            this.Idtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Idtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Idtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Idtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Idtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Idtxt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.Idtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Idtxt.Location = new System.Drawing.Point(186, 20);
-            this.Idtxt.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Idtxt.Name = "Idtxt";
-            this.Idtxt.PasswordChar = '\0';
-            this.Idtxt.PlaceholderText = "Id...";
-            this.Idtxt.SelectedText = "";
-            this.Idtxt.Size = new System.Drawing.Size(310, 41);
-            this.Idtxt.TabIndex = 13;
+            this.panel2.Controls.Add(this.Updatelbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(682, 77);
+            this.panel2.TabIndex = 0;
+            // 
+            // Updatelbl
+            // 
+            this.Updatelbl.AutoSize = true;
+            this.Updatelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Updatelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
+            this.Updatelbl.Location = new System.Drawing.Point(277, 16);
+            this.Updatelbl.Name = "Updatelbl";
+            this.Updatelbl.Size = new System.Drawing.Size(129, 45);
+            this.Updatelbl.TabIndex = 7;
+            this.Updatelbl.Text = "Update";
             // 
             // UpdateUserControl
             // 
@@ -247,9 +248,9 @@
             this.Size = new System.Drawing.Size(682, 576);
             this.Load += new System.EventHandler(this.UpdateUserControl_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

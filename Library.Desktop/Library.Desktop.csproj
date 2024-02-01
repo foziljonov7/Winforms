@@ -90,6 +90,12 @@
     <Compile Include="UserControls\DataUserControl.Designer.cs">
       <DependentUpon>DataUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DeleteUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DeleteUserControl.Designer.cs">
+      <DependentUpon>DeleteUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UpdateUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DataUserControl.resx">
       <DependentUpon>DataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DeleteUserControl.resx">
+      <DependentUpon>DeleteUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateUserControl.resx">
       <DependentUpon>UpdateUserControl.cs</DependentUpon>

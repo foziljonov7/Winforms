@@ -60,5 +60,11 @@ namespace Library.Desktop
             UpdateUserControl userControl = new UpdateUserControl();
             AddUserControl(userControl);
         }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            DeleteUserControl userControl = new DeleteUserControl();
+            AddUserControl(userControl);
+        }
     }
 }
