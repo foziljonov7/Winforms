@@ -48,5 +48,11 @@ namespace Library.Desktop
             DataUserControl userControl = new DataUserControl();
             AddUserControl(userControl);
         }
+
+        private void Createbtn_Click(object sender, EventArgs e)
+        {
+            CreateUserControl userControl = new CreateUserControl();
+            AddUserControl(userControl);
+        }
     }
 }

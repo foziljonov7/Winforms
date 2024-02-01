@@ -172,6 +172,7 @@
             this.Createbtn.TabIndex = 2;
             this.Createbtn.Text = "Create";
             this.Createbtn.UseVisualStyleBackColor = true;
+            this.Createbtn.Click += new System.EventHandler(this.Createbtn_Click);
             // 
             // Databtn
             // 
