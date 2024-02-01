@@ -90,6 +90,12 @@
     <Compile Include="UserControls\DataUserControl.Designer.cs">
       <DependentUpon>DataUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UpdateUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UpdateUserControl.Designer.cs">
+      <DependentUpon>UpdateUserControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DataUserControl.resx">
       <DependentUpon>DataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UpdateUserControl.resx">
+      <DependentUpon>UpdateUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -159,6 +159,7 @@
             this.Updatebtn.TabIndex = 3;
             this.Updatebtn.Text = "Update";
             this.Updatebtn.UseVisualStyleBackColor = true;
+            this.Updatebtn.Click += new System.EventHandler(this.Updatebtn_Click);
             // 
             // Createbtn
             // 

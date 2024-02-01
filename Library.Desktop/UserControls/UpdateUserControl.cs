@@ -11,15 +11,42 @@ using System.Windows.Forms;
 
 namespace Library.Desktop.UserControls
 {
-    public partial class CreateUserControl : UserControl
+    public partial class UpdateUserControl : UserControl
     {
         SqlConnection connection = new SqlConnection();
         SqlCommand command = new SqlCommand();
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
-        public CreateUserControl()
+        public UpdateUserControl()
         {
             InitializeComponent();
+        }
+        private void Update()
+        {
+            try
+            {
+                if(DateTime.TryParse(TimeOfWritingtxt.Text, out DateTime timeOfWriting))
+                {
+                    connection.Open();
+                    command = new SqlCommand("Update[Table] set Name = @Name, Price = @Price, Author = @Author, TimeOfWriting = @TimeOfWriting WHERE Id = @Id", connection);
+                    command.Parameters.AddWithValue("@Id", Idtxt.Text);
+                    command.Parameters.AddWithValue("@Name", Nametxt.Text);
+                    command.Parameters.AddWithValue("@Price", Pricetxt.Text);
+                    command.Parameters.AddWithValue("@Author", Authortxt.Text);
+                    command.Parameters.AddWithValue("@TimeOfWriting", timeOfWriting);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Succesfully saved");
+                }
+                else
+                {
+                    MessageBox.Show("Convert to error type");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Invalid operation {ex}");
+            }
         }
         private void LoadData()
         {
@@ -28,72 +55,29 @@ namespace Library.Desktop.UserControls
             table = new DataTable();
             adapter.Fill(table);
         }
+        private void UpdateUserControl_Load(object sender, EventArgs e)
+        {
+            connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\dev\Новая папка\Calculator\Library.Desktop\LibraryDB.mdf"";Integrated Security=True");
+            LoadData();
+            Idtxt.Focus();
+        }
         private void Clear()
         {
+            Idtxt.Clear();
             Nametxt.Clear();
             Pricetxt.Clear();
             Authortxt.Clear();
             TimeOfWritingtxt.Clear();
         }
-        private void Create()
-        {
-            try
-            {
-                if(DateTime.TryParse(TimeOfWritingtxt.Text, out DateTime timeOfWriting))
-                {
-                    connection.Open();
-                    string createQuery = $"INSERT INTO [Table](Name, Price, Author, TimeOfWriting, Created) VALUES (@Name, @Price, @Author, @TimeOfWriting, @Created)";
-                    command = new SqlCommand(createQuery, connection);
-                    command.Parameters.AddWithValue("@Name", Nametxt.Text);
-                    command.Parameters.AddWithValue("@Price", Pricetxt.Text);
-                    command.Parameters.AddWithValue("@Author", Authortxt.Text);
-                    command.Parameters.AddWithValue("@TimeOfWriting", timeOfWriting);
-                    command.Parameters.AddWithValue("@Created", DateTime.UtcNow.AddHours(5));
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Convert to TimeOfWriting error");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show($"Invalid operation {ex}");
-            }
-        }
-        private void CreateUserControl_Load(object sender, EventArgs e)
-        {
-            connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\dev\Новая папка\Calculator\Library.Desktop\LibraryDB.mdf"";Integrated Security=True");
-            LoadData();
-            Nametxt.Focus();
-        }
-
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            if(Nametxt.Text == ""
-                || Pricetxt.Text == ""
-                || Authortxt.Text == ""
-                || TimeOfWritingtxt.Text == "")
-            {
-                MessageBox.Show($"Data is not complete");
-            }
-            else
-            {
-                Create();
-                MessageBox.Show("Successfully saved!");
-                Clear();
-            }
+            Update();
+            Clear();
         }
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
             Clear();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
