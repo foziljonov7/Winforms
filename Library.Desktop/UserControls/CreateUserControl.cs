@@ -84,5 +84,10 @@ namespace Library.Desktop.UserControls
                 Clear();
             }
         }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

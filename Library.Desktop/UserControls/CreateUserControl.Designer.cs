@@ -211,6 +211,7 @@
             this.guna2GradientButton2.Size = new System.Drawing.Size(143, 45);
             this.guna2GradientButton2.TabIndex = 5;
             this.guna2GradientButton2.Text = "Cancel";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
             // CreateUserControl
             // 
