@@ -40,7 +40,7 @@ namespace Library.Desktop.UserControls
             try
             {
                 if(DateTime.TryParse(TimeOfWritingtxt.Text, out DateTime timeOfWriting))
-                {
+                {   
                     connection.Open();
                     string createQuery = $"INSERT INTO [Table](Name, Price, Author, TimeOfWriting, Created) VALUES (@Name, @Price, @Author, @TimeOfWriting, @Created)";
                     command = new SqlCommand(createQuery, connection);

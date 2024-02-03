@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Deletelbl = new System.Windows.Forms.Label();
             this.Idtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Deletelbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,15 +50,6 @@
             this.panel1.Size = new System.Drawing.Size(682, 576);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.Deletelbl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(682, 76);
-            this.panel2.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.Idtxt);
@@ -69,17 +60,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(682, 500);
             this.panel3.TabIndex = 1;
-            // 
-            // Deletelbl
-            // 
-            this.Deletelbl.AutoSize = true;
-            this.Deletelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Deletelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
-            this.Deletelbl.Location = new System.Drawing.Point(272, 17);
-            this.Deletelbl.Name = "Deletelbl";
-            this.Deletelbl.Size = new System.Drawing.Size(116, 45);
-            this.Deletelbl.TabIndex = 14;
-            this.Deletelbl.Text = "Delete";
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // Idtxt
             // 
@@ -141,6 +122,26 @@
             this.guna2GradientButton1.Text = "Save";
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.Deletelbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(682, 76);
+            this.panel2.TabIndex = 0;
+            // 
+            // Deletelbl
+            // 
+            this.Deletelbl.AutoSize = true;
+            this.Deletelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Deletelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(64)))), ((int)(((byte)(91)))));
+            this.Deletelbl.Location = new System.Drawing.Point(272, 17);
+            this.Deletelbl.Name = "Deletelbl";
+            this.Deletelbl.Size = new System.Drawing.Size(116, 45);
+            this.Deletelbl.TabIndex = 14;
+            this.Deletelbl.Text = "Delete";
+            // 
             // DeleteUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,9 +152,9 @@
             this.Size = new System.Drawing.Size(682, 576);
             this.Load += new System.EventHandler(this.DeleteUserControl_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

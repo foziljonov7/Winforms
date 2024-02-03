@@ -64,5 +64,10 @@ namespace Library.Desktop.UserControls
             LoadData();
             Idtxt.Focus();
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
