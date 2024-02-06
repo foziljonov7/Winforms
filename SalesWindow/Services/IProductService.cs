@@ -14,5 +14,8 @@ namespace SalesWindow.Services
         Task<Product> GetProduct(int id);
         Task<Product> CreateProduct(CreateProductDto newProduct);
         Task<(double TotalPrice, int QuantitySold)> SalesProduct(int id, int quantity);
+        Task<bool> DeleteProduct(int id);
+        Task<List<Product>> FirstProduct(string title);
+        Task<List<Product>> GetCategoryProduct(string category);
     }
 }

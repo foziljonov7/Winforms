@@ -64,6 +64,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="UserControls\CreateUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CreateUserControl.Designer.cs">
+      <DependentUpon>CreateUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DataUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DataUserControl.Designer.cs">
+      <DependentUpon>DataUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DeleteUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DeleteUserControl.Designer.cs">
+      <DependentUpon>DeleteUserControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +94,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\CreateUserControl.resx">
+      <DependentUpon>CreateUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DataUserControl.resx">
+      <DependentUpon>DataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DeleteUserControl.resx">
+      <DependentUpon>DeleteUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

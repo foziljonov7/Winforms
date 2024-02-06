@@ -20,7 +20,29 @@ namespace SalesWindow.Services
                 Quantity = 100,
                 Volume = 0.5,
                 Made = "uzb",
-                Category = "Gazli suv",
+                Category = "Gazli",
+                CameDate = DateTime.UtcNow.AddHours(5)
+            },
+            new Product
+            {
+                Id = 2,
+                Name = "Dena",
+                Price = 12000,
+                Quantity = 100,
+                Volume = 1,
+                Made = "uzb",
+                Category = "Tabiiy",
+                CameDate = DateTime.UtcNow.AddHours(5)
+            },
+            new Product
+            {
+                Id = 1,
+                Name = "Sayhun",
+                Price = 3000,
+                Quantity = 100,
+                Volume = 0.5,
+                Made = "uzb",
+                Category = "Mineral",
                 CameDate = DateTime.UtcNow.AddHours(5)
             }
         };
@@ -40,6 +62,33 @@ namespace SalesWindow.Services
 
             products.Add(product);
             return Task.FromResult(product);
+        }
+
+        public async Task<bool> DeleteProduct(int id)
+        {
+            var product = await GetProduct(id);
+            products.Remove(product);
+            return true;
+        }
+
+        public async Task<List<Product>> FirstProduct(string title)
+        {
+            List<Product> firstProducts = products.FindAll(p => p.Name == title);
+
+            if (firstProducts is null)
+                return null;
+
+            return await Task.FromResult(firstProducts);
+        }
+
+        public async Task<List<Product>> GetCategoryProduct(string category)
+        {
+            List<Product> categories = products.FindAll(p => p.Category == category);
+
+            if (categories is null)
+                return null;
+
+            return await Task.FromResult(categories);
         }
 
         public async Task<Product> GetProduct(int id)

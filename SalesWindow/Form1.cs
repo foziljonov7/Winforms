@@ -1,4 +1,5 @@
 ﻿using SalesWindow.Services;
+using SalesWindow.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,60 @@ namespace SalesWindow
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private async void FirstCategory(string category)
+        {
+            var categories = await service.GetCategoryProduct(category);
+
+            dataGridView1.DataSource = categories;
+        }
+        private void AddUserControl(UserControl userControl)
+        {
+            panel3.Controls.Clear();
+            panel3.Controls.Add(userControl);
+        }
+        private void Createbtn_Click(object sender, EventArgs e)
+        {
+            CreateUserControl userControl = new CreateUserControl(service);
+            AddUserControl(userControl);
+        }
+
+        private void Clearbtn_Click(object sender, EventArgs e)
+        {
+            ProductIdtxt.Clear();
+            Quantitytxt.Clear();
+            ProductIdtxt.Focus();
+            Searchtxt.Clear();
+        }
+
+        private void Databtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void CategoryCombo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            var category = CategoryCombo.SelectedItem.ToString();
+
+            if (category != null)
+                FirstCategory(category);
+        }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            DeleteUserControl userControl = new DeleteUserControl(service);
+            AddUserControl(userControl);
+        }
+
+        private async void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            var name = Searchtxt.Text;
+            var products = await service.FirstProduct(name);
+            if(products != null)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = products;
+            }
         }
     }
 }
