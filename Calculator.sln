@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Desktop", "..\Nimadur\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesWindow", "SalesWindow\SalesWindow.csproj", "{04DEAB3A-F1FB-4B32-A2D6-DC4AAB89199C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durgerking.Cafe", "Durgerking.Cafe\Durgerking.Cafe.csproj", "{95676FA3-B3F0-4648-BC69-0E35F181A4D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{04DEAB3A-F1FB-4B32-A2D6-DC4AAB89199C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04DEAB3A-F1FB-4B32-A2D6-DC4AAB89199C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04DEAB3A-F1FB-4B32-A2D6-DC4AAB89199C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95676FA3-B3F0-4648-BC69-0E35F181A4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95676FA3-B3F0-4648-BC69-0E35F181A4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95676FA3-B3F0-4648-BC69-0E35F181A4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95676FA3-B3F0-4648-BC69-0E35F181A4D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
